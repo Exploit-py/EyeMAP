@@ -5,7 +5,7 @@ This port-scanner uses threading for greater speed, it works very well on CTF's.
 
 This project is for educational purposes, any unauthorized network use is categorized as illegal and I will not be held responsible.
 
-### (**Check if the host is up before running.**)
+### Required nmap for detect version! (-sV)
 
 ## Author
 
@@ -25,12 +25,11 @@ This project is for educational purposes, any unauthorized network use is catego
 ```bash
   git clone https://github.com/Exploit-py/EyeMap
 ```
-## Install requirements
 ```bash
-python3 setup.py
+  python3 setup.py
 ```
 
-## Execute
+## Run
 
 ```bash
   ./eyemap.py <HOST>
@@ -51,7 +50,7 @@ python3 setup.py
 
 ## Functionalities
 - **host -> required**
-- **--port_range / -pR <>**
+- **--port_range / -pR <port-range>**
 - **--verbose / -v**
 - **--threads / -T <threads>**
 - **--serverVersion / -sV**
