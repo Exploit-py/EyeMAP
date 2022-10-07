@@ -14,7 +14,7 @@ from EyeMap_threading import *
 
 def banner():
     banner = pyfiglet.figlet_format("EyeMap")
-    print(f"{banner}\nAuthor: Exploit-py\nDate: 09/09/2022")
+    print(f"{banner}\nAuthor: Exploit-py\nDate: 09/09/2022\n")
 
 
 parser = argparse.ArgumentParser(description='Scan host ports')
@@ -36,9 +36,9 @@ serverVersion = args.serverVersion
 print(f"""
 --------CONFIG--------
 HOST: {host}
-Port Range: {port_range}
+Port Range: {"1024" if port_range is None else port_range}
 Server Version: {serverVersion}
-Threads: {threads}
+Threads: {"50" if threads is None else threads}
 Verbose: {verbose}
 ----------------------
 """)

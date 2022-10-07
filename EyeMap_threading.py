@@ -2,6 +2,7 @@
 
 import nmap
 import socket
+import subprocess
 from queue import Queue
 from threading import Thread, Lock
 
@@ -17,15 +18,31 @@ class PortScanner_Thread:
         self.tqueue = Queue()
         self.sync = Lock()
 
+    def filter_nmap_output(self, output:str):
+        begin = output.find("PORT")
+        end = output.find("Service detection")
+        print(output[begin-1:end-2])
+
     def server_version(self):
         _ports = ",".join([(str(x)) for x,y in self.logs.items()])
+        print("\nChecking version, wait...\n")
         _scan = nmap.PortScanner()
-        r = _scan.scan(self.host, _ports, "-sV")
-        r2 = r["scan"][self.host]["tcp"]
-        print(f"{'-'*22}\n")
-        for x,y in r2.items():
-            print(f"PORT: {x:<3}\n   Protocol: {y['name']}\n   Product: {y['product']}\n   Version: {y['version']}\n")
-        print(f"{'-'*22}")
+        r = _scan.scan(self.host, ports=_ports, arguments="-sV -Pn")
+        try:
+            r2 = r["scan"][self.host]["tcp"]
+            print(f"{'-'*22}\n")
+            for x,y in r2.items():
+                print(f"PORT: {x:<3}\n   Protocol: {y['name']}\n   Product: {y['product']}\n   Version: {y['version']}\n")
+            print(f"{'-'*22}")
+
+        except:
+            process = subprocess.Popen(f"nmap {self.host} -sV -p{_ports} -Pn", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+            output, error = process.communicate()
+            print(f"{'-'*22}\n")
+            self.filter_nmap_output(output.decode())
+            print(f"{'-'*22}\n")
+            
+            
 
     def show_output(self):
         print(f"{'-'*22}")
