@@ -25,6 +25,10 @@ This project is for educational purposes, any unauthorized network use is catego
 ```bash
   git clone https://github.com/Exploit-py/EyeMap
 ```
+## Install requirements
+```bash
+python3 setup.py
+```
 
 ## Execute
 
