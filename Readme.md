@@ -14,11 +14,9 @@ This project is for educational purposes, any unauthorized network use is catego
 
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/933791098827059204/1025171840450166884/unknown.png)
+![App Screenshot](https://cdn.discordapp.com/attachments/900169751349833778/1044107508081500170/image.png)
 
-![App Screenshot](https://cdn.discordapp.com/attachments/933791098827059204/1025172279774154752/unknown.png)
-
-![App Screenshot](https://cdn.discordapp.com/attachments/933791098827059204/1025172569957081108/unknown.png)
+![App Screenshot](https://cdn.discordapp.com/attachments/900169751349833778/1044107896738283570/image.png)
 
 ## Download
 
