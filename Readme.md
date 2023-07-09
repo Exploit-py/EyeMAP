@@ -24,7 +24,7 @@ This project is for educational purposes, any unauthorized network use is catego
   git clone https://github.com/Exploit-py/EyeMap
 ```
 ```bash
-  python3 setup.py
+  cd EyeMap/ && python3 setup.py
 ```
 
 ## Run
